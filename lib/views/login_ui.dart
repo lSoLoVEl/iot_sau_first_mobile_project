@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
 
 class LoginUI extends StatefulWidget {
@@ -12,7 +14,7 @@ class _LoginUIState extends State<LoginUI> {
   Widget build(BuildContext context) {
     return Center(
       child: Scaffold(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.amber,
         body: Padding(
           padding: EdgeInsets.only(
             left: 38.0,
@@ -96,33 +98,129 @@ class _LoginUIState extends State<LoginUI> {
               ),
               TextField(
                 decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color.fromARGB(255, 110, 109, 109),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color.fromARGB(255, 110, 109, 109),
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color.fromARGB(255, 110, 109, 109),
+                      ),
+                    ),
+                    prefixIcon: Icon(
+                      Icons.fingerprint,
+                      color: Colors.grey[600],
+                    ),
+                    hintText: 'Password',
+                    hintStyle: TextStyle(
+                      color: Colors.grey[600],
+                    ),
+                    isCollapsed: true,
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 25.0,
+                    ),
+                    suffixIcon: Icon(
+                      Icons.visibility,
+                      color: Colors.grey[600],
+                    )),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color.fromARGB(255, 110, 109, 109),
-                    ),
-                  ),
-                  prefixIcon: Icon(
-                    Icons.fingerprint,
-                    color: Colors.grey[600],
-                  ),
-                  hintText: 'Password',
-                  hintStyle: TextStyle(
-                    color: Colors.grey[600],
-                  ),
-                  isCollapsed: true,
-                  contentPadding: EdgeInsets.symmetric(
-                    vertical: 25.0,
-                  ),
-                  suffixIcon: Icon(
-                    Icons.visibility,
-                    color: Colors.grey[600],
-                  )
                 ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.015,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'LOGIN',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  fixedSize: Size(
+                    MediaQuery.of(context).size.width,
+                    50.0,
+                  ),
+                  backgroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        7.0), //แนะนำให้ใส่เป้นตัวเลขกำหนดไปเลย
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.015,
+              ),
+              Text(
+                'OR',
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.015,
+              ),
+              OutlinedButton(
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/images/googlelogo.png',
+                      height: 20.0,
+                      
+                    ),
+                    Text(
+                      '  Sing-in with Goolge',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+                style: OutlinedButton.styleFrom(
+                  fixedSize: Size(
+                    MediaQuery.of(context).size.width,
+                    50.0,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        7.0), //แนะนำให้ใส่เป้นตัวเลขกำหนดไปเลย
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Don\'t have an account?',
+                  ),
+                  TextButton(
+                    onPressed: (){},
+                    child: Text(
+                      'Signup',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
